@@ -228,10 +228,15 @@ section.block { padding-block: 96px 0; }
 .contact {
   display: grid; gap: 22px;
 }
-.portrait {
-  display: block; width: 100%; height: auto; margin-top: 22px;
-  border-radius: 2px;
+.about { align-items: start; row-gap: 22px; }
+.portrait { display: block; width: 100%; height: auto; border-radius: 2px; }
+.about .portrait { grid-column: 1; grid-row: 2; }
+.about .about-text {
+  grid-column: 2; grid-row: 2; align-self: stretch;
+  display: flex; flex-direction: column; justify-content: space-between;
+  margin-block: -0.32em;
 }
+.about .about-text p:last-child { margin-bottom: 0; }
 .email {
   font-family: var(--display); font-weight: 500;
   font-size: clamp(28px, 5.4vw, 64px); line-height: 1.05;
@@ -271,7 +276,10 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
   .hero-meta { grid-template-columns: minmax(0, 1fr); }
   .role { text-align: left; padding-bottom: 0; }
   .block-head { grid-template-columns: minmax(0, 1fr); }
-  .portrait { max-width: 280px; margin-top: 18px; }
+  .about { row-gap: 18px; }
+  .portrait { max-width: 280px; }
+  .about .portrait { grid-row: auto; }
+  .about .about-text { grid-column: 1; grid-row: auto; margin-block: 0; }
   section.block { padding-block: 64px 0; }
   .screen .ratio { left: 40px; top: 16px; }
   .framelines { inset: 10px; }
@@ -424,11 +432,9 @@ footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wr
 
   <section class="block" id="sobre-mi">
     <div class="wrap">
-      <div class="block-head">
-        <div class="about-id">
-          <h2 data-es="Sobre mí" data-en="About">Sobre mí</h2>
-          <img class="portrait" src="assets/carlos.jpg" alt="Carlos de Tomás" width="1086" height="1448" loading="lazy">
-        </div>
+      <div class="block-head about">
+        <h2 data-es="Sobre mí" data-en="About">Sobre mí</h2>
+        <img class="portrait" src="assets/carlos.jpg" alt="Carlos de Tomás" width="1086" height="1448" loading="lazy">
         <div class="about-text">
           <p data-es="Formado en el Instituto del Cine de Madrid. Trabajo en publicidad, ficción y videoclip." data-en="Trained at Instituto del Cine de Madrid. I work across commercials, narrative and music videos.">Formado en el Instituto del Cine de Madrid. Trabajo en publicidad, ficción y videoclip.</p>
           <p data-es="Entiendo la fotografía como una parte más de la historia. Me gusta implicarme desde la preparación, trabajar de cerca con dirección y con el equipo de arte, y buscar una luz que tenga sentido dentro de cada escena." data-en="I see cinematography as part of the storytelling. I like to get involved from prep, work closely with the director and the art department, and find light that makes sense within each scene.">Entiendo la fotografía como una parte más de la historia. Me gusta implicarme desde la preparación, trabajar de cerca con dirección y con el equipo de arte, y buscar una luz que tenga sentido dentro de cada escena.</p>

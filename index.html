@@ -65,11 +65,7 @@
 <main id="inicio">
   <section class="hero" aria-label="Carlos de Tomás">
     <div class="screen">
-      <video id="loop" poster="/assets/portada.jpg" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
-      <script>
-        // Pantallas estrechas reciben la versión ligera del vídeo (1280 px); el resto, la de 1920 px.
-        document.getElementById("loop").src = matchMedia("(max-width: 760px)").matches ? "/assets/portada-movil.mp4" : "/assets/portada.mp4";
-      </script>
+      <video id="loop" src="/assets/portada.mp4" poster="/assets/portada.jpg" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
       <div class="framelines" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
     </div>
     <div class="wrap">
